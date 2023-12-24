@@ -1,15 +1,47 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
+<script lang="ts">
+	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
+  import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
+	const modalStore = getModalStore();
+	const salt = "sdnejnu893ufjnjk"
+	async function calcHash(m: string): Promise<string> {
+		let msgUint8 = new TextEncoder("utf-8").encode(m);
+		let buf = await crypto.subtle.digest('SHA-256', msgUint8)
+		let hashArray = Array.from(new Uint8Array(buf));
+    let hashHex = hashArray.map(function(b){return b.toString(16).padStart(2, '0')}).join('');
+		return hashHex;
+	}
+	async function submit(ev: any) {
+		const ptn = "70996d823688894ce7e02bb2a806b9617bc78b7153aadb91580ca96477ac9b03";
+		ev.preventDefault();
+		let hash = await calcHash(salt+document.form.name.value.toUpperCase())
+		if(hash!=ptn){
+			const modal: ModalSettings = {
+				type: 'alert',
+				// Data
+				title: 'Error',
+				body: '入力が合いませんでした。',
+			};
+			modalStore.trigger(modal);
+			return;
+		}
+			const modal: ModalSettings = {
+				type: 'confirm',
+				// Data
+				title: '電技OBの会にようこそ',
+				body: 'あらかじめ、Discordのアカウントを作ってからアクセスしてください。<br/><a class="anchor" href="https://discord.gg/fPasnTVH">Discord invite URL</a>',
+				image: 'https://chart.googleapis.com/chart?cht=qr&chs=600x300&chld=L|0&chl=https%3A%2F%2Fdiscord.gg%2FfPasnTVH'
+			};
+			modalStore.trigger(modal);
+	}
+</script>
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
-		<h1 class="h1">Hello World!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout</li>
-			<li><code class="code">/src/app.postcss</code> - app wide css</li>
-			<li>
-				<code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents
-			</li>
-		</ul>
+		<h1 class="h1">OECU電技OBの会（Discordサーバー）への招待</h1>
+		<form name="form" on:submit={submit}>
+			<div class="input-group input-group-divider grid-cols-[1fr_auto]">
+				<input name="name" type="text" placeholder="クラブの略称をアルファベットで入力" />
+				<button class="variant-filled-secondary">入力</button>
+			</div>
+		</form>
 	</div>
 </div>
