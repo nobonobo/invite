@@ -37,6 +37,7 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-5">
 		<h1 class="h1">OECU電技OBの会（Discordサーバー）への招待</h1>
+		<p>クラブの略称をアルファベットで入力してください。</p>
 		<form name="form" on:submit={submit}>
 			<div class="input-group input-group-divider grid-cols-[1fr_auto]">
 				<input name="name" type="text" placeholder="クラブの略称をアルファベットで入力" />
