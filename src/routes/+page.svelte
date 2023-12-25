@@ -28,7 +28,7 @@
 				type: 'confirm',
 				// Data
 				title: '電技OBの会にようこそ',
-				body: 'あらかじめ、Discordのアカウントを作ってからアクセスしてください。<br/><a class="anchor" href="https://discord.gg/fPasnTVH">Discord invite URL</a>',
+				body: 'あらかじめ、Discordのアカウントを作ってからアクセスしてください。<br/><a class="anchor" href="https://discord.gg/fPasnTVH">Discord invite URL</a><br/>2024/01/01 21:00~23:00 にビデオミーティングを開催予定です。参加お待ちしていますー。もちろんテキストのみの参加でも大歓迎！',
 				image: 'https://chart.googleapis.com/chart?cht=qr&chs=600x300&chld=L|0&chl=https%3A%2F%2Fdiscord.gg%2FfPasnTVH'
 			};
 			modalStore.trigger(modal);
