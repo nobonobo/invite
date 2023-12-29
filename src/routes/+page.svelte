@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
+	import { Modal, getModalStore, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
   import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
 	const modalStore = getModalStore();
 	const salt = "sdnejnu893ufjnjk"
@@ -34,15 +34,22 @@
 			modalStore.trigger(modal);
 	}
 </script>
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5">
-		<h1 class="h1">OECU電技OBの会（Discordサーバー）への招待</h1>
-		<p>クラブの略称をアルファベットで入力してください。</p>
-		<form name="form" on:submit={submit}>
-			<div class="input-group input-group-divider grid-cols-[1fr_auto]">
-				<input name="name" type="text" placeholder="クラブの略称をアルファベットで入力" />
-				<button class="variant-filled-secondary">入力</button>
-			</div>
-		</form>
+<div class="flex flex-col h-screen">
+	<div class="w-full">
+		<AppBar slotDefault="place-self-center" slotTrail="place-content-end">
+			<svelte:fragment slot="trail"><LightSwitch /></svelte:fragment>
+		</AppBar>
+	</div>
+	<div class="flex-1 mx-auto flex place-content-center items-center">
+		<div class="space-y-5">
+			<h1 class="h1">OECU電技OBの会（Discordサーバー）への招待</h1>
+			<p>クラブの略称をアルファベットで入力してください。</p>
+			<form name="form" on:submit={submit}>
+				<div class="input-group input-group-divider grid-cols-[1fr_auto]">
+					<input name="name" type="text" placeholder="クラブの略称をアルファベットで入力" />
+					<button class="variant-filled-secondary">入力</button>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
