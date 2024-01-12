@@ -28,8 +28,8 @@
 				type: 'confirm',
 				// Data
 				title: '電技OBの会にようこそ',
-				body: 'あらかじめ、<a class="anchor" href="https://discord.com/register">Discord</a>のアカウントを作ってからアクセスしてください。<br/><a class="anchor" href="https://discord.gg/6ZG9Z6Zh">Discord invite URL</a><br/>テキストのみの参加でも大歓迎！<br/>何か問題相談あればメールください:<a class="anchor" href=mailto:noboru@irieda.com>イリエダ宛メール</a>',
-				image: 'https://chart.googleapis.com/chart?cht=qr&chs=600x300&chld=L|0&chl=https%3A%2F%2Fdiscord.gg%2F6ZG9Z6Zh'};
+				body: 'あらかじめ、<a class="anchor" href="https://discord.com/register">Discord</a>のアカウントを作ってからアクセスしてください。<br/><a class="anchor" href="https://discord.gg/jA8MMhjxVf">Discord invite URL</a><br/>テキストのみの参加でも大歓迎！<br/>何か問題相談あればメールください:<a class="anchor" href=mailto:noboru@irieda.com>イリエダ宛メール</a>',
+				image: 'https://chart.googleapis.com/chart?cht=qr&chs=600x300&chld=L|0&chl=https%3A%2F%2Fdiscord.gg%2FjA8MMhjxVf'};
 			modalStore.trigger(modal);
 	}
 </script>
